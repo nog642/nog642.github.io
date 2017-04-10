@@ -94,43 +94,33 @@
 				The original version of this was made on <a target="_blank" href="http://www.codecademy.com/">codecademy</a> in JavaScript, and can be found <a target="_blank" href="https://www.codecademy.com/nog642/codebits/dUcSc9">here</a>. I also rewrote this in Python as an exercise while I was learning it, but the version embedded here is in JS, since that's built for the web.
 			</p>
 			<h3>Encrypt</h3>
-			<div>
-				<form name="decipher">
+			<form name="decipher">
+				<h4>
 					Message
-					<br>
-					<input name="plaintextInput" type="text"></input>
-					<br>
-					<br>
-					Key
-					<br>
-					<input type="text" id="keyInput"></input>
-					<br>
-                			<br>
-					<input type="button" value="Submit" onClick="encrypt()"></input>
-					<br>
-					<br>
-					<textarea name='answerArea'></textarea>
-				</form>
-			</div>
+				</h4>
+				<input name="plaintextInput" type="text"></input>
+				<h4>Key</h4>
+				<input type="text" id="keyInput"></input>
+				<br>
+               			<br>
+				<input type="button" value="Submit" onClick="encrypt()"></input>
+				<br>
+				<br>
+				<textarea name='answerArea'></textarea>
+			</form>
 			<h3>Decrypt</h3>
-			<div class="codemaker">
-				<form name="cipher">
-					Code
-					<br>
-					<input name="other_plaintextInput" type="text"></input>
-					<br>
-					<br>
-					Key
-					<br>
-					<input type="text" id="other_keyInput"></input>
-					<br>
-					<br>
-					<input type="button" value="Submit" onClick="decrypt()"></input>
-					<br>
-					<br>
-					<textarea name='other_answerArea'></textarea>
-				</form>
-			</div>
+			<form name="cipher">
+				<h4>Code</h4>
+				<input name="other_plaintextInput" type="text"></input>
+				<h4>Key</h4>
+				<input type="text" id="other_keyInput"></input>
+				<br>
+				<br>
+				<input type="button" value="Submit" onClick="decrypt()"></input>
+				<br>
+				<br>
+				<textarea name='other_answerArea'></textarea>
+			</form>
 		</div>
 	</body>
 </html>
