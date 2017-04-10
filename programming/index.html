@@ -77,7 +77,7 @@
 			</p>
 			<h3>Python</h3>
 			<p>
-				At first, since I chose to do a JavaScript tutorial instead of a <a target="_blank" href="http://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> one in 7th grade, I held that JavaScript was better, and I didn't want to learn Python. However, when I did my <a target="_blank" href="http://databrigade.com/recent-graduates/hands-on-ml-program/">internship</a> at <a target="_blank" href="http://lightsphereai.com/">Lightsphere AI</a>, I had to learn it. Since the only other programming languages I had used were MATLAB and JavaScript, I didn't know what to expect. When I learned JavaScript, it was quite different from MATLAB. When I learned Python however, I was surprised by how similar it was to JavaScript&mdash;they could pretty much be translated one-to-one, line-by-line. In fact that's exactly what I did. To get a bit of practice with Python before I started any real projects, I converted my vigin&egrave;re cipher program, which I had written in JavaScript, to Python. After using Python for the majority of my work at Lightsphere AI, it's currently my strongest language.
+				At first, since I chose to do a JavaScript tutorial instead of a <a target="_blank" href="http://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> one in 7th grade, I held that JavaScript was better, and I didn't want to learn Python. However, when I did my <a target="_blank" href="http://databrigade.com/recent-graduates/hands-on-ml-program/">internship</a> at <a target="_blank" href="http://lightsphereai.com/">Lightsphere AI</a>, I had to learn it. Since the only other programming languages I had used were MATLAB and JavaScript, I didn't know what to expect. When I learned JavaScript, it was quite different from MATLAB. When I learned Python however, I was surprised by how similar it was to JavaScript&mdash;they could pretty much be translated one-to-one, line-by-line. In fact that's exactly what I did. To get a bit of practice with Python before I started any real projects, I converted my Vigen&egrave;re cipher program, which I had written in JavaScript, to Python. After using Python for the majority of my work at Lightsphere AI, it's currently my strongest language.
 			</p>
 			<h3>Java</h3>
 			<p>
@@ -86,10 +86,68 @@
 			<p>
 				During winter break of my freshman year of high school, I had an opportunity to earn some money doing work for Lightsphere AI. To fit in with the rest of the backend code though, I had to write my program in Java. I tried to finish the Java tutorial on codecademy, but quickly found that it wasn't proving very useful. Instead, I learned Java the natural way&mdash;just going at it, and looking stuff up on Google whenever necessary, usually clicking a link to <a target="_blank" href="http://stackoverflow.com/">stack overflow</a>. I had already done some work with classes in Python, but only after having written a program in Java did I truly understand its object oriented nature.
 			</p>
-			<h2>Vigin&egrave;re Cipher</h2>
+			<h2>Vigen&egrave;re Cipher</h2>
 			<p>
-				asdf explain how cipher works
+				The <a target="_blank" href="http://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">Vigen&egrave;re cipher</a> is a cipher from the 1500s that was extremely effective, and is still pretty hard for professional cryptologists to crack sometimes. It uses a keyword of any length containing only letters, and uses it to encrypt a text. Each letter of the text is replaced with a different letter based on the original letter and the key.
 			</p>
+			<p>
+				A Caesar cipher is a more primitive type of cipher, as you can probably tell by its name. It was around since way before the 1500s, and is easier to crack. The key is just a number from 0 to 25, which can also be represented with the letters <code>a</code> through <code>z</code>. To encode it, you shift each letter of the plaintext through the aphabet by the number of the key. If you reach the end of the alphabet, you loop around.
+			</p>
+			<table cellspacing="5px">
+				<tr>
+					<td>
+						<div class="text">Plaintext:</div>
+					</td>
+					<td>
+						<code>THIS IS AN EXAMPLE</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="text">Key:</div>
+					</td>
+					<td>
+						<code>DDDD DD DD DDDDDDD</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="text">Ciphertext:</div>
+					</td>
+					<td>
+						<code>WKLV LV DQ HADPSOH</code>
+					</td>
+				</tr>
+			</table>
+			<p>
+				In this example, each letter in the plaintext is shifted by 4, because the key is <code>D</code>. <code>T</code> becomes <code>W</code> because <code>W</code> is 4 letters after <code>T</code> in the alphabet. However, you can see some patterns here. <code>THIS IS</code> becomes <code>WKLV LV</code>. There is a repetition, and it is clear that the two words end with the same 2 letters, which can help in decoding. In the Vigen&egrave;re cipher, instead of using just one letter as the key for every letter in the plaintext, a keyword is taken and repeated instead, and a different Caesar cipher is applied to each letter of the plaintext. For example, if the keyword was <code>DUCK</code>, the <code>T</code> in <code>THIS</code> would become a <code>W</code>, because <code>W</code> is 4 (<code>D</code>) letters after <code>T</code> in the alphabet, and the <code>H</code> in <code>THIS</code> becomes a <code>B</code> because <code>B</code> is 21 (<code>U</code>) letters after <code>H</code> in the alphabet (if you loop around).
+			</p>
+			<table cellspacing="5px">
+				<tr>
+					<td>
+						<div class="text">Plaintext:</div>
+					</td>
+					<td>
+						<code>THIS IS AN EXAMPLE</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="text">Key:</div>
+					</td>
+					<td>
+						<code>DUCK DU CK DUCKDUC</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="text">Ciphertext:</div>
+					</td>
+					<td>
+						<code>WBKC LM CX HRCWSFG</code>
+					</td>
+				</tr>
+			</table>
 			<p>
 				The original version of this was made on <a target="_blank" href="http://www.codecademy.com/">codecademy</a> in JavaScript, and can be found <a target="_blank" href="https://www.codecademy.com/nog642/codebits/dUcSc9">here</a>. I also rewrote this in Python as an exercise while I was learning it, but the version embedded here is in JS, since that's built for the web.
 			</p>
