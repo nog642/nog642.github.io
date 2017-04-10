@@ -1,0 +1,67 @@
+/*
+
+Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+}
+
+.hljs-emphasis,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  color: #00ff00;
+}
+
+.hljs,
+.hljs-title,
+.hljs-subst {
+  color: #cccccc;
+}
+
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  color: #00ff00;
+}
+
+.hljs-string,
+.hljs-name,
+.hljs-type,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #99cc66;
+}
+
+.hljs-built_in {
+	color: #ff5050;
+}
+
+.hljs-keyword {
+  color: #a088bb;
+}
+
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-doctag,
+.hljs-type,
+.hljs-name,
+.hljs-strong {
+	color: #4477cc;
+}
+
+.hljs-comment {
+  font-style: italic;
+}
