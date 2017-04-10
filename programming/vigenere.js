@@ -97,8 +97,8 @@ function encrypt() {
 	document.forms.decipher.answerArea.value = answer;
 }
 function decrypt() {
-    var plaintext = document.forms.cipher.other_plaintextInput.value.toLowerCase();
-	var key = document.forms.cipher.other_keyInput.value.toLowerCase();
+    var plaintext = document.forms.cipher.plaintextInput.value.toLowerCase();
+	var key = document.forms.cipher.keyInput.value.toLowerCase();
 	key = allLetters(key);
 	var fullkey = getFullKey(plaintext, key);
 	var caesar = getCaesar(fullkey);
@@ -125,5 +125,5 @@ function decrypt() {
 		}
 	}
 	var answer = getAnswer(newAnswer);
-	document.forms.cipher.other_answerArea.value = answer;
+	document.forms.cipher.answerArea.value = answer;
 }

@@ -171,15 +171,15 @@
 			<h3>Decrypt</h3>
 			<form name="cipher">
 				<h4>Code</h4>
-				<input name="other_plaintextInput" type="text"></input>
+				<input name="plaintextInput" type="text"></input>
 				<h4>Key</h4>
-				<input type="text" id="other_keyInput"></input>
+				<input type="text" id="keyInput"></input>
 				<br>
 				<br>
 				<input type="button" value="Submit" onClick="decrypt()"></input>
 				<br>
 				<br>
-				<textarea name='other_answerArea'></textarea>
+				<textarea name='answerArea'></textarea>
 			</form>
 			<pre class="codebox" id="text"><code class="javascript">var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 function allLetters(theString) {
