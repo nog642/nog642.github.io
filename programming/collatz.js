@@ -6,9 +6,10 @@ function getNext(n) {
     }
 }
 function collatz() {
-    var numb = document.forms.collatz.startNum.value;
+    var numb = document.forms.collatzForm.startNum.value;
+    console.log(numb);
     if (isNaN(numb) || numb <= 0) {
-        document.forms.collatz.fullList.value = 'NaN';
+        document.forms.collatzForm.fullList.value = 'NaN';
     } else {
         numb = Number(numb)
         var numbList = [numb];
@@ -16,6 +17,6 @@ function collatz() {
             numb = getNext(numb);
             numbList.push(numb);
         }
-        document.forms.collatz.fullList.value = numbList;
+        document.forms.collatzForm.fullList.value = numbList;
     }
 }

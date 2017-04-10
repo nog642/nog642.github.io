@@ -97,7 +97,7 @@ function encrypt() {
 	document.forms.decipher.answerArea.value = answer;
 }
 function decrypt() {
-    var plaintext = document.forms.cipher.plaintextInput.value.toLowerCase();
+	var plaintext = document.forms.cipher.plaintextInput.value.toLowerCase();
 	var key = document.forms.cipher.keyInput.value.toLowerCase();
 	key = allLetters(key);
 	var fullkey = getFullKey(plaintext, key);
