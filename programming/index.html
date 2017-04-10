@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="../style.css">
-		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400italic,400&subset=latin,greek'>
+		<link rel='stylesheet' href='../font.css'>
 		<link rel="icon" href="../images/favicon.png">
 		<script src="../lib/jquery-2.2.2.min.js"></script>
 		<script src="../sidebar.js"></script>
@@ -312,7 +312,7 @@ function decrypt() {
 }</code></pre>
 			<h2>Collatz Conjecture</h2>
 			<p>
-				asdf
+				The <a target="_blank" href="http://en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture</a> is 
 			</p>
 			<form name="collatzForm">
 				<h4>Starting Number</h4>
@@ -324,6 +324,28 @@ function decrypt() {
 				<br>
 				<textarea name='fullList'></textarea>
 			</form>
+			<pre class="codebox" id="text"><code class="javascript">function getNext(n) {
+    if (n % 2 == 0) {
+        return n / 2;
+    } else {
+        return (n * 3) + 1;
+    }
+}
+function collatz() {
+    var numb = document.forms.collatzForm.startNum.value;
+    console.log(numb);
+    if (isNaN(numb) || numb <= 0) {
+        document.forms.collatzForm.fullList.value = 'NaN';
+    } else {
+        numb = Number(numb)
+        var numbList = [numb];
+        while (numb !== 1) {
+            numb = getNext(numb);
+            numbList.push(numb);
+        }
+        document.forms.collatzForm.fullList.value = numbList;
+    }
+}</code></pre>
 		</div>
 	</body>
 </html>
