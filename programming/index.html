@@ -6,6 +6,7 @@
 		<link rel="icon" href="../images/favicon.png">
 		<script src="../lib/jquery-2.2.2.min.js"></script>
 		<script src="../sidebar.js"></script>
+		<script src='vigenere.js'></script>
 		<title>nog642 - Programming</title>
 	</head>
 	<body>
@@ -87,8 +88,49 @@
 			</p>
 			<h2>Vigin&egrave;re Cipher</h2>
 			<p>
-				asdf
+				asdf explain how cipher works
 			</p>
+			<p>
+				The original version of this was made on <a target="_blank" href="http://www.codecademy.com/">codecademy</a> in JavaScript, and can be found <a target="_blank" href="https://www.codecademy.com/nog642/codebits/dUcSc9">here</a>. I also rewrote this in Python as an exercise while I was learning it, but the version embedded here is in JS, since that's built for the web.
+			</p>
+			<h3>Encrypt</h3>
+			<div>
+				<form name="decipher">
+					Message
+					<br>
+					<input name="plaintextInput" type="text"></input>
+					<br>
+					<br>
+					Key
+					<br>
+					<input type="text" id="keyInput"></input>
+					<br>
+                			<br>
+					<input type="button" value="Submit" onClick="encrypt()"></input>
+					<br>
+					<br>
+					<textarea name='answerArea'></textarea>
+				</form>
+			</div>
+			<h3>Decrypt</h3>
+			<div class="codemaker">
+				<form name="cipher">
+					Code
+					<br>
+					<input name="other_plaintextInput" type="text"></input>
+					<br>
+					<br>
+					Key
+					<br>
+					<input type="text" id="other_keyInput"></input>
+					<br>
+					<br>
+					<input type="button" value="Submit" onClick="decrypt()"></input>
+					<br>
+					<br>
+					<textarea name='other_answerArea'></textarea>
+				</form>
+			</div>
 		</div>
 	</body>
 </html>
