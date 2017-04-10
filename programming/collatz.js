@@ -7,7 +7,6 @@ function getNext(n) {
 }
 function collatz() {
     var numb = document.forms.collatzForm.startNum.value;
-    console.log(numb);
     if (isNaN(numb) || numb <= 0) {
         document.forms.collatzForm.fullList.value = 'NaN';
     } else {
