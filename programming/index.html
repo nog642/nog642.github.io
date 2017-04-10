@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="../lib/styles/nog642.css">
 		<script src="../lib/highlight.pack.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
+		<script src='collatz.js'></script>
 		<title>nog642 - Programming</title>
 	</head>
 	<body>
@@ -156,9 +157,7 @@
 			</p>
 			<h3>Encrypt</h3>
 			<form name="decipher">
-				<h4>
-					Message
-				</h4>
+				<h4>Message</h4>
 				<input name="plaintextInput" type="text"></input>
 				<h4>Key</h4>
 				<input type="text" id="keyInput"></input>
@@ -182,8 +181,7 @@
 				<br>
 				<textarea name='other_answerArea'></textarea>
 			</form>
-			<pre class="codebox" id="text"><code class="javascript">
-var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+			<pre class="codebox" id="text"><code class="javascript">var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 function allLetters(theString) {
     var isLetter = false;
     for (var i = 0; i < theString.length; i++) {
@@ -311,8 +309,21 @@ function decrypt() {
     }
     var answer = getAnswer(newAnswer);
     document.forms.cipher.other_answerArea.value = answer;
-}
-			</code></pre>
+}</code></pre>
+			<h2>Collatz Conjecture</h2>
+			<p>
+				asdf
+			</p>
+			<form name="collatz">
+				<h4>Starting Number</h4>
+				<input name="startNum" type="text"></input>
+				<br>
+				<br>
+				<input type="button" value="Submit" onClick="collatz()"></input>
+				<br>
+				<br>
+				<textarea name='fullList'></textarea>
+			</form>
 		</div>
 	</body>
 </html>
