@@ -11,18 +11,6 @@
 		<script src="../lib/highlight.pack.js"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 		<script src='collatz.js'></script>
-		<!--<script type="text/x-mathjax-config">
-		    MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-		        var TEX = MathJax.InputJax.TeX;
-		        var PREFILTER = TEX.prefilterMath;
-		        TEX.Augment({
-		            prefilterMath: function (math,displaymode,script) {
-		                math = "\\displaystyle{"+math+"}";
-		                return PREFILTER.call(TEX,math,displaymode,script);
-		            }
-		        });
-		    });
-		</script>-->
 		<script async src="../lib/MathJax-master/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 		<title>nog642 - Programming</title>
 	</head>
@@ -338,7 +326,7 @@ function decrypt() {
 			$$
 				f(x)=
 				\begin{cases}
-					\frac{x}{2} & \text{ if } \frac{x}{2}\in\mathbb{N} \\ 
+					\dfrac{x}{2} & \text{ if } \frac{x}{2}\in\mathbb{N} \\ 
 					3x+1 & \text{ if } \frac{x+1}{2}\in\mathbb{N}
 				\end{cases}
 			$$
