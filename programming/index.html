@@ -324,11 +324,10 @@ function decrypt() {
 				The <a target="_blank" href="//en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture</a> is an unproven conjecture in mathematics. You start with a number \(x\). If \(x\) is even, you divide it by \(2\). If \(x\) is odd, you multiply it by \(3\) and add \(1\). Now you have a new number, and you repeat the process. The conjecture is that you will always end up at \(1\), no matter what natural number you start with. Basically you have a function \(f(x)\), and you keep composing it until you get \(1\).
 			</p>
 			$$
-				f(x)=
-				\begin{cases}
-					\dfrac{x}{2} & \text{ if } \frac{x}{2}\in\mathbb{N} \\ 
-					3x+1 & \text{ if } \frac{x+1}{2}\in\mathbb{N}
-				\end{cases}
+			    f(x)=\begin{cases}
+			        \frac{x}{2} &\text{ if } \frac{x}{2}\in\mathbb{N} \\ 
+			        3x+1 &\text{ if } \frac{x+1}{2}\in\mathbb{N}
+			    \end{cases}
 			$$
 			<p>
 				For example, say you start with \(9\). Since \(9\) is odd, you multiply it by \(3\) to get \(27\), then add \(1\) to get \(28\). Since \(28\) is even, you divide by \(2\) to get \(14\). Since \(14\) is even, you divide by \(2\) to get \(7\). Since \(7\) is odd, you multiply by \(3\) to get \(21\), then add \(1\) to get \(22\). Since \(22\) is even, you divide by \(2\) to get \(11\). Since \(11\) is odd, you multiply by \(3\) to get \(33\), then add \(1\) to get \(34\). Since \(34\) is even, you divide by \(2\) to get \(17\). Since \(17\) is odd, you multiply by \(3\) to get \(51\), then add \(1\) to get \(52\). Since \(52\) is even, you divide by \(2\) to get \(26\). Since \(26\) is even, you divide by \(2\) to get \(13\). Since \(13\) is odd, you multiply by \(3\) to get \(39\), then add \(1\) to get \(40\). Since \(40\) is even, you divide by \(2\) to get \(20\). Since \(20\) is even, you divide by \(2\) to get \(10\). Since \(10\) is even, you divide by \(2\) to get \(5\). Since \(5\) is odd, you multiply by \(3\) to get \(15\), then add \(1\) to get \(16\). Since \(16\) is even, you divide by \(2\) to get \(8\). Since \(8\) is even, you divide by \(2\) to get \(4\). Since \(4\) is even, you divide by \(2\) to get \(2\). Since \(2\) is even, you divide by \(2\) to get \(1\). If you enter \(9\) into the box below, you'll get this series of numbers.
