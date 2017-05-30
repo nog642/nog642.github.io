@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../style.css">
+		<link rel='stylesheet' href='../font.css'>
+		<link rel="icon" href="../images/favicon.png">
+		<script src="../lib/jquery-2.2.2.min.js"></script>
+		<script src="../sidebar.js"></script>
+		<script src='vigenere.js'></script>
+		<link rel="stylesheet" href="../lib/styles/nog642.css">
+		<script src="../lib/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<script src='collatz.js'></script>
+		<script async src="../lib/MathJax-master/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+		<title>nog642 - Academia - Math</title>
+	</head>
+	<body>
+		<div class="main-head-out">
+			<img src="../images/main_bg.png" class="bg-img">
+			<div class="main-head-in">
+				<h1>Math</h1>
+				<h4 class="main-subheading">nog642</h4>
+			</div>
+		</div>
+		<div class="sidebar">
+			<div class="sidebar-grabber">
+				<div class="unselectable">|||</div>
+			</div>
+			<a href=".." class="sidebar-link">
+				<div class="sidebar-item" id="sidebar-1">
+					Home
+				</div>
+			</a>
+			<a href="." class="sidebar-link">
+				<div class="sidebar-item" id="sidebar-2">
+					Programming
+				</div>
+			</a>
+			<a href="../media/" class="sidebar-link">
+				<div class="sidebar-item" id="sidebar-3">
+					Media
+				</div>
+			</a>
+			<a href="../academia/" class="sidebar-link">
+				<div class="sidebar-item" id="sidebar-4">
+					Academia
+				</div>
+			</a>
+			<a href="../contact/" class="sidebar-link">
+				<div class="sidebar-item" id="sidebar-5">
+					Contact
+				</div>
+			</a>
+		</div>
+		<div class="clicker">
+		</div>
+		<div class=holder>
+			<h2><a href="definitions/">Definitions</a></h2>
+			<p>
+				paragraph
+			</P>
+			<h2>Explanations</h2>
+			<p>
+				The <a target="_blank" href="//en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">Vigen&egrave;re cipher</a> is a cipher from the 1500s that was extremely effective, and is still pretty hard for professional cryptologists to crack sometimes. It uses a keyword of any length containing only letters, and uses it to encrypt a text. Each letter of the text is replaced with a different letter based on the original letter and the key.
+			</p>
+			<p>
+				A Caesar cipher is a more primitive type of cipher. As you can probably tell by its name, it was around since way before the 1500s, and is easier to crack. The key is just a number from 0 to 25, which can also be represented with the letters <code>A</code> through <code>Z</code>. To encode it, you shift each letter of the plaintext through the aphabet by the number of the key. If you reach the end of the alphabet, you loop around.
+			</p>
+			<table cellspacing="5px">
+				<tr>
+					<td>
+						<div id="text">Plaintext:</div>
+					</td>
+					<td>
+						<code>THIS IS AN EXAMPLE</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="text">Key:</div>
+					</td>
+					<td>
+						<code>DDDD DD DD DDDDDDD</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="text">Ciphertext:</div>
+					</td>
+					<td>
+						<code>WKLV LV DQ HADPSOH</code>
+					</td>
+				</tr>
+			</table>
+			<p>
+				In this example, each letter in the plaintext is shifted by 4, because the key is <code>D</code>. <code>T</code> becomes <code>W</code> because <code>W</code> is 4 letters after <code>T</code> in the alphabet. However, you can see some patterns here. <code>THIS IS</code> becomes <code>WKLV LV</code>. There is a repetition, and it is clear that the two words end with the same 2 letters, which can help in decoding. In the Vigen&egrave;re cipher, instead of using just one letter as the key for every letter in the plaintext, a keyword is taken and repeated instead, and a different Caesar cipher is applied to each letter of the plaintext. For example, if the keyword was <code>DUCK</code>, the <code>T</code> in <code>THIS</code> would become a <code>W</code>, because <code>W</code> is 4 (<code>D</code>) letters after <code>T</code> in the alphabet, and the <code>H</code> in <code>THIS</code> becomes a <code>B</code> because <code>B</code> is 21 (<code>U</code>) letters after <code>H</code> in the alphabet (if you loop around).
+			</p>
+			<table cellspacing="5px">
+				<tr>
+					<td>
+						<div id="text">Plaintext:</div>
+					</td>
+					<td>
+						<code>THIS IS AN EXAMPLE</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="text">Key:</div>
+					</td>
+					<td>
+						<code>DUCK DU CK DUCKDUC</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="text">Ciphertext:</div>
+					</td>
+					<td>
+						<code>WBKC LM CX HRCWSFG</code>
+					</td>
+				</tr>
+			</table>
+			<p>
+				The original version of this was made on <a target="_blank" href="//www.codecademy.com/">codecademy</a> in JavaScript, and can be found <a target="_blank" href="//www.codecademy.com/nog642/codebits/dUcSc9">here</a>. I also rewrote this in Python as an exercise while I was learning it, but the version embedded here is in JS, since that's built for the web.
+			</p>
+			<div style="margin:-40px;"></div>
+			<table cellspacing="30px">
+				<td>
+					<h3>Encrypt</h3>
+					<form name="decipher">
+						<h4>Message</h4>
+						<input name="plaintextInput" type="text"></input>
+						<h4>Key</h4>
+						<input type="text" id="keyInput"></input>
+						<br>
+		               			<br>
+						<input type="button" class="button" value="Submit" onClick="encrypt()"></input>
+						<br>
+						<br>
+						<textarea name='answerArea'></textarea>
+					</form>
+				</td>
+				<td>
+					<h3>Decrypt</h3>
+					<form name="cipher">
+						<h4>Code</h4>
+						<input name="plaintextInput" type="text"></input>
+						<h4>Key</h4>
+						<input type="text" id="keyInput"></input>
+						<br>
+						<br>
+						<input type="button" class="button" value="Submit" onClick="decrypt()"></input>
+						<br>
+						<br>
+						<textarea name='answerArea'></textarea>
+					</form>
+				</td>
+			</table>
+			<div style="margin:-20px;"></div>
+			<pre class="codebox" id="text"><code class="javascript">var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+function allLetters(theString) {
+    var isLetter = false;
+    for (var i = 0; i < theString.length; i++) {
+        isLetter = false;
+        for (var j = 0; j < alphabet.length; j++) {
+            if (theString.substring(i, (i + 1)) === alphabet[j]) {
+                isLetter = true;
+            }
+        }
+        if (!isLetter) {
+            theString = theString.substring(0, i) + theString.substring((i + 1), theString.length);
+        }
+    }
+    return theString;
+}
+function getFullKey(plaintext, key) {
+    var fullkey = '';
+    var keyPlacement = -1;
+    var keyPick = 0;
+    for (var i = 0; i < plaintext.length; i++) {
+        keyPlacement++;
+        for (var j = 0; j < alphabet.length; j++) {
+            if (plaintext.substring(i, (i + 1)) === alphabet[j]) {
+                keyPick = keyPlacement % key.length;
+                fullkey += key.substring(keyPick, (keyPick + 1));
+            }
+        }
+        if ((i + 1) !== fullkey.length) {
+            fullkey += plaintext.substring(i, (i + 1));
+            keyPlacement--;
+        }
+    }
+    return fullkey;
+}
+function getCaesar(fullkey) {
+    var caesar = [];
+    for (var i = 0; i < fullkey.length; i++) {
+        for (var j = 0; j < alphabet.length; j++) {
+            if (fullkey.substring(i, (i + 1)) === alphabet[j]) {
+                caesar[caesar.length] = j;
+            }
+        }
+        if ((i + 1) !== caesar.length) {
+            caesar[caesar.length] = fullkey.substring(i, (i + 1));
+        }
+    }
+    return caesar;
+}
+function getLetters(plaintext) {
+    var letters = [];
+    for (var i = 0; i < plaintext.length; i++) {
+        for (var j = 1; j <= alphabet.length; j++) {
+            if (plaintext.substring(i, (i + 1)) === alphabet[j - 1]) {
+                letters[letters.length] = j;
+            }
+        }
+        if ((i + 1) !== letters.length) {
+            letters[letters.length] = plaintext.substring(i, (i + 1));
+        }
+    }
+    return letters;
+}
+function getAnswer(newAnswer) {
+    var answer = '';
+    for (var i = 0; i < newAnswer.length; i++) {
+        for (var j = 0; j < alphabet.length; j++) {
+            if (newAnswer[i] === (j + 1)) {
+                answer += alphabet[j];
+            }
+        }
+        if ((i + 1) !== answer.length) {
+            answer += newAnswer[i];
+        }
+    }
+    return answer;
+}
+function encrypt() {
+    var plaintext = document.forms.decipher.plaintextInput.value.toLowerCase();
+    var key = document.forms.decipher.keyInput.value.toLowerCase();
+    key = allLetters(key);
+    var fullkey = getFullKey(plaintext, key);
+    var caesar = getCaesar(fullkey);
+    var letters = getLetters(plaintext);
+    var newAnswer = [];
+    for (var i = 0; i < letters.length; i++) {
+        if (typeof(letters[i]) === 'number') {
+            newAnswer[newAnswer.length] = letters[i] + caesar[i];
+        } else {
+            newAnswer[newAnswer.length] = letters[i];
+        }
+        if (newAnswer[i] > 26) {
+            newAnswer[i] -= 26;
+        }
+    }
+    var answer = getAnswer(newAnswer);
+    document.forms.decipher.answerArea.value = answer;
+}
+function decrypt() {
+    var plaintext = document.forms.cipher.plaintextInput.value.toLowerCase();
+    var key = document.forms.cipher.keyInput.value.toLowerCase();
+    key = allLetters(key);
+    var fullkey = getFullKey(plaintext, key);
+    var caesar = getCaesar(fullkey);
+    var letters = [];
+    for (var i = 0; i < plaintext.length; i++) {
+        for (var j = 1; j <= alphabet.length; j++) {
+            if (plaintext.substring(i, (i + 1)) === alphabet[j - 1]) {
+                letters[letters.length] = j;
+            }
+        }
+        if ((i + 1) !== letters.length) {
+            letters[letters.length] = plaintext.substring(i, (i + 1));
+        }
+    }
+    var newAnswer = [];
+    for (var i = 0; i < letters.length; i++) {
+        if (typeof(letters[i]) === 'number') {
+            newAnswer[newAnswer.length] = letters[i] - caesar[i];
+            if (newAnswer[i] < 1) {
+                newAnswer[i] += 26;
+            }
+        } else {
+            newAnswer[newAnswer.length] = letters[i];
+        }
+    }
+    var answer = getAnswer(newAnswer);
+    document.forms.cipher.answerArea.value = answer;
+}</code></pre>
+			<h2>Collatz Conjecture</h2>
+			<p>
+				The <a target="_blank" href="//en.wikipedia.org/wiki/Collatz_conjecture">Collatz conjecture</a> is an unproven conjecture in mathematics. You start with a number \(x\). If \(x\) is even, you divide it by \(2\). If \(x\) is odd, you multiply it by \(3\) and add \(1\). Now you have a new number, and you repeat the process. The conjecture is that you will always end up at \(1\), no matter what natural number you start with. Basically you have a function \(f(x)\), and you keep composing it until you get \(1\).
+			</p>
+			$$
+			    f(x)=\begin{cases}
+			        \frac{x}{2} &\text{ if } \frac{x}{2}\in\mathbb{N} \\ 
+			        3x+1 &\text{ if } \frac{x+1}{2}\in\mathbb{N}
+			    \end{cases}
+			$$
+			<p>
+				For example, say you start with \(9\). Since \(9\) is odd, you multiply it by \(3\) to get \(27\), then add \(1\) to get \(28\). Since \(28\) is even, you divide by \(2\) to get \(14\). Since \(14\) is even, you divide by \(2\) to get \(7\). Since \(7\) is odd, you multiply by \(3\) to get \(21\), then add \(1\) to get \(22\). Since \(22\) is even, you divide by \(2\) to get \(11\). Since \(11\) is odd, you multiply by \(3\) to get \(33\), then add \(1\) to get \(34\). Since \(34\) is even, you divide by \(2\) to get \(17\). Since \(17\) is odd, you multiply by \(3\) to get \(51\), then add \(1\) to get \(52\). Since \(52\) is even, you divide by \(2\) to get \(26\). Since \(26\) is even, you divide by \(2\) to get \(13\). Since \(13\) is odd, you multiply by \(3\) to get \(39\), then add \(1\) to get \(40\). Since \(40\) is even, you divide by \(2\) to get \(20\). Since \(20\) is even, you divide by \(2\) to get \(10\). Since \(10\) is even, you divide by \(2\) to get \(5\). Since \(5\) is odd, you multiply by \(3\) to get \(15\), then add \(1\) to get \(16\). Since \(16\) is even, you divide by \(2\) to get \(8\). Since \(8\) is even, you divide by \(2\) to get \(4\). Since \(4\) is even, you divide by \(2\) to get \(2\). Since \(2\) is even, you divide by \(2\) to get \(1\). If you enter \(9\) into the box below, you'll get this series of numbers.
+			</p>
+			$$
+				9\rightarrow28\rightarrow14\rightarrow7\rightarrow22\rightarrow11\rightarrow34\rightarrow17\rightarrow52\rightarrow26\rightarrow13\rightarrow40\rightarrow20\rightarrow10\rightarrow5\rightarrow16\rightarrow8\rightarrow4\rightarrow2\rightarrow1
+			$$
+			<p>
+				I originally made this on <a target="_blank" href="//www.codecademy.com/">codecademy</a>. It's a very simple program. At first, I was trying to get an animation of some sort working for this, but I never got it working. I did get the basic part working though. You just input the starting number, and it returns a comma delimited list of all the numbers it goes though until it reaches \(1\).
+			</p>
+			<form name="collatzForm">
+				<h4>Starting Number</h4>
+				<input name="startNum" type="text"></input>
+				<br>
+				<br>
+				<input type="button" class="button" value="Submit" onClick="collatz()"></input>
+				<br>
+				<br>
+				<textarea name='fullList'></textarea>
+			</form>
+			<pre class="codebox" id="text"><code class="javascript">function getNext(n) {
+    if (n % 2 == 0) {
+        return n / 2;
+    } else {
+        return (n * 3) + 1;
+    }
+}
+function collatz() {
+    var numb = document.forms.collatzForm.startNum.value;
+    console.log(numb);
+    if (isNaN(numb) || numb <= 0) {
+        document.forms.collatzForm.fullList.value = 'NaN';
+    } else {
+        numb = Number(numb)
+        var numbList = [numb];
+        while (numb !== 1) {
+            numb = getNext(numb);
+            numbList.push(numb);
+        }
+        document.forms.collatzForm.fullList.value = numbList;
+    }
+}</code></pre>
+		</div>
+	</body>
+</html>
