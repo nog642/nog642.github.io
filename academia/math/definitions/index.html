@@ -7,6 +7,11 @@
 		<script src="../../../lib/jquery-2.2.2.min.js"></script>
 		<script src="../../../sidebar.js"></script>
 		<script async src="../../../lib/MathJax-master/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+		<style>
+			.wide td {
+				padding: 0 30px 0 30px;
+			}
+		</style>
 		<title>nog642 - Academia - Mathematical Definitions</title>
 	</head>
 	<body>
@@ -54,11 +59,68 @@
 			<p>
 				paragraph
 			</P>
+			<table cellspacing="5px" class="wide">
+				<tr>
+					<td>
+						<div id="text">
+							To a real number
+						</div>
+					</td>
+					<td>
+						$$
+							\lim
+						$$
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="text">
+							To \(\infty\)
+						</div>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="text">
+							To \(-\infty\)
+						</div>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="text">
+							From above
+						</div>
+					</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="text">
+							From below
+						</div>
+					</td>
+					<td>
+					</td>
+				</tr>
+			</table>
+			<h3>Limits</h3>
+			<h4>To Infinity</h4>
+			<h4>To Negative Infinity</h4>
+			<h3>Derivative</h3>
+			$$
+				\frac{\mathrm{d}}{\mathrm{d}x}(f(x))=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}
+			$$
 			<h3>Definite Integral</h3>
 			$$
 				\forall(f:X\to\mathbb{R}):\forall a,b\in\mathbb{R}:\int_a^bf(x)\,\mathrm{d}x=\begin{cases}
-					\lim_{c\to a^+}\lim_{d\to b^-}\lim_{h\to\infty}\left(\frac{1}{h}\sum_{\substack{n=ch\\n\in X}}^{dh}f\left(\frac{n}{h}\right)\right) &\text{ if } a<b\\
-					-\int_b^af(x)\,\mathrm{d}x &\text{ if } a>b
+					\displaystyle\lim_{c\to a^+}\lim_{d\to b^-}\lim_{h\to\infty}\left(\frac{1}{h}\sum_{\substack{n=ch\\n\in X}}^{dh}f\left(\frac{n}{h}\right)\right) &\text{ if } a < b\\
+					\displaystyle-\int_b^af(x)\,\mathrm{d}x &\text{ if } a > b
 				\end{cases}
 			$$
 			<h3>Indefinite Integral</h3>
