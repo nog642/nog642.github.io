@@ -66,19 +66,19 @@
 			$$
 			<h4>To \(\infty\)</h4>
 			$$
-				\forall(f:X\to\mathbb{R}):\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to\infty}f(x)=L\iff\forall\varepsilon>0:\exists N\in\mathbb{R}:\forall x\in X:(x>N\implies|f(x)-L|<\varepsilon)\right)
+				\forall(f:X\to\mathbb{R}):\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to\infty}f(x)=\lim_{x\to\infty^-}f(x)=L\iff\forall\varepsilon>0:\exists N\in\mathbb{R}:\forall x\in X:(x>N\implies|f(x)-L|<\varepsilon)\right)
 			$$
 			<h4>To \(-\infty\)</h4>
 			$$
-				\forall(f:X\to\mathbb{R}):\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to\infty}f(x)=L\iff\forall\varepsilon>0:\exists N\in\mathbb{R}:\forall x\in X:(x< N\implies|f(x)-L|<\varepsilon)\right)
+				\forall(f:X\to\mathbb{R}):\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to-\infty}f(x)=\lim_{x\to-\infty^+}f(x)=L\iff\forall\varepsilon>0:\exists N\in\mathbb{R}:\forall x\in X:(x< N\implies|f(x)-L|<\varepsilon)\right)
 			$$
 			<h4>To a real number from above</h4>
 			$$
-				\forall(f:X\to\mathbb{R}):\forall c\in\mathbb{R}:\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to c}f(x)=L\iff\forall\varepsilon>0:\exists\delta>0:\forall x\in X:(0< x-c<\delta\implies|f(x)-L|<\varepsilon)\right)
+				\forall(f:X\to\mathbb{R}):\forall c\in\mathbb{R}:\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to c^+}f(x)=L\iff\forall\varepsilon>0:\exists\delta>0:\forall x\in X:(0< x-c<\delta\implies|f(x)-L|<\varepsilon)\right)
 			$$
 			<h4>To a real number from below</h4>
 			$$
-				\forall(f:X\to\mathbb{R}):\forall c\in\mathbb{R}:\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to c}f(x)=L\iff\forall\varepsilon>0:\exists\delta>0:\forall x\in X:(0< c-x<\delta\implies|f(x)-L|<\varepsilon)\right)
+				\forall(f:X\to\mathbb{R}):\forall c\in\mathbb{R}:\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to c^-}f(x)=L\iff\forall\varepsilon>0:\exists\delta>0:\forall x\in X:(0< c-x<\delta\implies|f(x)-L|<\varepsilon)\right)
 			$$
 			<h3>Derivative</h3>
 			$$
@@ -86,9 +86,9 @@
 			$$
 			<h3>Definite Integral</h3>
 			$$
-				\forall(f:X\to\mathbb{R}):\forall a,b\in\mathbb{R}:\int_a^bf(x)\,\mathrm{d}x=\begin{cases}
-					\displaystyle\lim_{c\to a^+}\lim_{d\to b^-}\lim_{h\to\infty}\left(\frac{1}{h}\sum_{\substack{n=ch\\n\in X}}^{dh}f\left(\frac{n}{h}\right)\right) &\text{ if } a < b\\
-					\displaystyle-\int_b^af(x)\,\mathrm{d}x &\text{ if } a > b
+				\forall(f:X\to\mathbb{R}):\forall a,b\in[-\infty,\infty]:\int_a^bf(x)\,\mathrm{d}x=\begin{cases}
+					\displaystyle\lim_{c\to a^+}\lim_{d\to b^-}\lim_{h\to\infty}\left(\frac{1}{h}\sum_{\substack{n=ch\\n\in X}}^{dh}f\left(\frac{n}{h}\right)\right) &\text{ if } a< b\\
+					\displaystyle-\int_b^af(x)\,\mathrm{d}x &\text{ if } a>b
 				\end{cases}
 			$$
 			<h3>Indefinite Integral</h3>
