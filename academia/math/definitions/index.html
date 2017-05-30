@@ -8,8 +8,8 @@
 		<script src="../../../sidebar.js"></script>
 		<script async src="../../../lib/MathJax-master/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 		<style>
-			.wide td {
-				padding: 0 30px 0 30px;
+			.wide {
+				padding: 0 0 0 20px;
 			}
 		</style>
 		<title>nog642 - Academia - Mathematical Definitions</title>
@@ -59,59 +59,27 @@
 			<p>
 				paragraph
 			</P>
-			<table cellspacing="5px" class="wide">
-				<tr>
-					<td>
-						<div id="text">
-							To a real number
-						</div>
-					</td>
-					<td>
-						$$
-							\lim
-						$$
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div id="text">
-							To \(\infty\)
-						</div>
-					</td>
-					<td>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div id="text">
-							To \(-\infty\)
-						</div>
-					</td>
-					<td>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div id="text">
-							From above
-						</div>
-					</td>
-					<td>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div id="text">
-							From below
-						</div>
-					</td>
-					<td>
-					</td>
-				</tr>
-			</table>
 			<h3>Limits</h3>
-			<h4>To Infinity</h4>
-			<h4>To Negative Infinity</h4>
+			<h4>To a real number</h4>
+			$$
+				\forall(f:X\to\mathbb{R}):\forall c\in\mathbb{R}:\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to c}f(x)=L\iff\forall\varepsilon>0:\exists\delta>0:\forall x\in X:(0<|x-c|<\delta\implies|f(x)-L|<\varepsilon)\right)
+			$$
+			<h4>To \(\infty\)</h4>
+			$$
+				\forall(f:X\to\mathbb{R}):\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to\infty}f(x)=L\iff\forall\varepsilon>0:\exists N\in\mathbb{R}:\forall x\in X:(x>N\implies|f(x)-L|<\varepsilon)\right)
+			$$
+			<h4>To \(-\infty\)</h4>
+			$$
+				\forall(f:X\to\mathbb{R}):\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to\infty}f(x)=L\iff\forall\varepsilon>0:\exists N\in\mathbb{R}:\forall x\in X:(x< N\implies|f(x)-L|<\varepsilon)\right)
+			$$
+			<h4>To a real number from above</h4>
+			$$
+				\forall(f:X\to\mathbb{R}):\forall c\in\mathbb{R}:\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to c}f(x)=L\iff\forall\varepsilon>0:\exists\delta>0:\forall x\in X:(0< x-c<\delta\implies|f(x)-L|<\varepsilon)\right)
+			$$
+			<h4>To a real number from below</h4>
+			$$
+				\forall(f:X\to\mathbb{R}):\forall c\in\mathbb{R}:\forall x:\forall L\in\mathbb{R}:\left(\lim_{x\to c}f(x)=L\iff\forall\varepsilon>0:\exists\delta>0:\forall x\in X:(0< c-x<\delta\implies|f(x)-L|<\varepsilon)\right)
+			$$
 			<h3>Derivative</h3>
 			$$
 				\frac{\mathrm{d}}{\mathrm{d}x}(f(x))=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}
